@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image } from 'react-native';
 
+import { LinearGradient } from 'expo-linear-gradient';
 import logo from '../../assets/logo.png';
 
 import {
@@ -12,7 +13,8 @@ import {
     SignLinkText,
 } from './styles';
 
-export default function SignUp({ navigation }) {
+export default function SignUp(props) {
+    const { navigation } = props
 
     return (
 
@@ -20,6 +22,16 @@ export default function SignUp({ navigation }) {
         <Image source={logo} />
 
         <Form>
+            <LinearGradient
+                colors={['#fd883e', '#fd6b13', '#fd1145']}
+                style={{
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    height: 400,
+                }}
+                />
             <FormInput
                 icon="person-outline"
                 autoCorrect={false}
@@ -46,7 +58,7 @@ export default function SignUp({ navigation }) {
             </SubmitButton>
         </Form>
 
-        <SignLink onPress={() => navigation.navigate('Login')}>
+        <SignLink onPress={() => navigation.navigate('SignIn')}>
             <SignLinkText>Ja tenho conta</SignLinkText>
         </SignLink>
     </Container>

@@ -1,8 +1,9 @@
 import React from 'react';
 import 'react-native-gesture-handler'
 
-import Login from './src/pages/SignIn/index'
-import NewAccount from './src/pages/SignUp/index'
+import SignIn from './src/pages/SignIn/index'
+import SignUp from './src/pages/SignUp/index'
+import Home from './src/pages/Home/index'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -13,21 +14,37 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login" >
+      <Stack.Navigator initialRouteName="SignIn" >
         <Stack.Screen
-          name="NewAccount"
-          component={NewAccount}
+          name="SignUp"
+          component={SignUp}
           options={{
             headerShown: false
           }}
         />
         <Stack.Screen
-          name="Login"
-          component={Login}
+          name="SignIn"
+          component={SignIn}
           options={{
             headerShown: false
           }}
 
+        />
+        <Stack.Screen
+          name="Home" component={Home}
+          options={{
+            headerStyle: {
+              backgroundColor:'#7159c1' ,
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+            headerShown: true,
+            title: "Home",
+            headerTitleAlign: "center",
+            headerLeft: null,
+          }}  
         />
       </Stack.Navigator>
 
