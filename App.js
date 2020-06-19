@@ -33,17 +33,7 @@ export default function App() {
         <Stack.Screen
           name="Home" component={Home}
           options={{
-            headerStyle: {
-              backgroundColor:'#7159c1' ,
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-            headerShown: true,
-            title: "Home",
-            headerTitleAlign: "center",
-            headerLeft: null,
+            headerShown: false
           }}  
         />
       </Stack.Navigator>

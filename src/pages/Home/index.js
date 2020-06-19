@@ -1,24 +1,18 @@
 import React from 'react';
-import { Image } from 'react-native';
+import 'react-native-gesture-handler'
 
-import logo from '../../assets/logo.png';
+import LoginTeste from './LoginTeste'
+import Teste from   './Teste'
 
-import {Container, SubmitButton, Form} from './styles';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
+const Drawer = createDrawerNavigator();
 
-export default function Home(props) {
-    const { navigation } = props
-
-    return (
-        <Container>
-            <Image source={logo} />
-            <Form>
-                <SubmitButton 
-                onPress={() => navigation.navigate('SignIn')}>
-                    Sair
-                </SubmitButton>
-            </Form>
-        </Container>
-      
-    );
+export default function App() {
+  return (
+      <Drawer.Navigator>
+        <Drawer.Screen name="LoginTeste" component={LoginTeste} />
+        <Drawer.Screen name="Teste" component={Teste} />
+      </Drawer.Navigator>
+  );
 }
