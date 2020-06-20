@@ -1,5 +1,7 @@
-import React from 'react';
-import { Image } from 'react-native';
+import React, { useState } from 'react';
+import { Image, Text } from 'react-native';
+
+import * as authService from '../../service/authService'
 
 import { LinearGradient } from 'expo-linear-gradient';
 import logo from '../../assets/logo.png';
@@ -16,11 +18,30 @@ import {
 export default function SignUp(props) {
     const { navigation } = props
 
+    const [mensagem, setMensagem] = useState("")
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    const createUser = () => {
+
+        authService.saveUser(email, password)
+        .then(retorno => {
+            setMensagem("Usuário Cadastrado")
+            setEmail("")
+            setName("")
+            setPassword("")
+        })
+        .catch(erro => {
+            setMensagem(erro.message)
+        })
+    }
+
     return (
 
     <Container>
         <Image source={logo} />
-
+        <Text>{mensagem}</Text>
         <Form>
             <LinearGradient
                 colors={['#fd883e', '#fd6b13', '#fd1145']}
@@ -37,7 +58,8 @@ export default function SignUp(props) {
                 autoCorrect={false}
                 autoCapitalize="none"
                 placeholder="Nome completo"
-                
+                value={name}
+                onChangeText={texto => setName(texto)}
             />
             <FormInput
                 icon="mail-outline"
@@ -45,15 +67,18 @@ export default function SignUp(props) {
                 autoCorrect={false}
                 autoCapitalize="none"
                 placeholder="Digite seu e-mail"
+                value={email}
+                onChangeText={texto => setEmail(texto)}
                 
             />
             <FormInput
                 icon="lock-outline"
                 secureTextEntry
                 placeholder="Sua senha secreta"
-                
+                value={password}
+                onChangeText={texto => setPassword(texto)}        
             />
-            <SubmitButton>
+            <SubmitButton onPress={createUser}>
                 Criar conta
             </SubmitButton>
         </Form>

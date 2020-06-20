@@ -10,3 +10,13 @@ export const login = (email, password) => {
             .catch(erro => reject(erro))
     })
 }
+
+export const saveUser = (email, password) => {
+    return new Promise((resolve, reject) => {
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then(retorno => resolve(retorno))
+            .catch(erro => reject(erro))
+    })
+}
