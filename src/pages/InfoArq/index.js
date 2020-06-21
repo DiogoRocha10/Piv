@@ -4,16 +4,14 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { DrawerActions } from '@react-navigation/native'
 import { Container } from './styles'
 
-export default function Home(props) {
+export default function InfoArq(props) {
     const { navigation } = props
 
     return (
         <TouchableOpacity   
-            style={{ alignItems: "flex-start", marginTop: 50 }}
-            >
-                <Icon name="reorder" size={50} color="blue" onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />
+            style={{ alignItems: "flex-start", marginTop: 50 }}>
+            <Icon name="reorder" size={50} color="blue" onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />
         </TouchableOpacity>
-            
     )
 }
 

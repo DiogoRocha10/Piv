@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { DrawerActions } from '@react-navigation/native'
 import { Container } from './styles'
 
-export default function Home(props) {
+export default function FAQ(props) {
     const { navigation } = props
 
     return (
@@ -13,7 +13,6 @@ export default function Home(props) {
             >
                 <Icon name="reorder" size={50} color="blue" onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />
         </TouchableOpacity>
-            
     )
 }
 
