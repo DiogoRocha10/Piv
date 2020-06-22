@@ -3,6 +3,7 @@ import { StyleSheet, Linking, Image, TouchableOpacity, Alert, Button} from 'reac
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Perfil from '../../assets/perfil.jpg'
 
+
 import { DrawerActions } from '@react-navigation/native'
 import { Container, Form, TextoSobre} from './styles'
 
@@ -23,13 +24,13 @@ export default function Sobre(props) {
                 Alert.alert(`Impossivel abrir URL : ${url}`)
             }
         }, [url]);
-        return <Button title={children} onPress={handlePress} />
+        return <Button color="black" title={children} onPress={handlePress} />
     }
 
     return (
         <Container>
             <TouchableOpacity>
-                <Icon name="reorder" size={50} color="blue" onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />
+                <Icon name="reorder" size={50} color="#fff" onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />
             </TouchableOpacity>
             <Form>
                 <Image style={styles.img} source={Perfil} />
@@ -43,7 +44,7 @@ export default function Sobre(props) {
                 Desenvolvedor
                 Front-End
                 Compasso Uol\n
-            `}
+                `}
             </TextoSobre>
             <OpenURL url={facebook}>Facebook</OpenURL>
             <OpenURL url={twitter}>Twitter</OpenURL>
@@ -58,5 +59,12 @@ const styles = StyleSheet.create({
         height: 100,
         width: 100,
         borderRadius: 100
+    },
+    fundo: {
+        height: 500,
+        width: 500,
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center"
     }
 })

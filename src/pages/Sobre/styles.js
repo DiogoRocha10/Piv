@@ -7,8 +7,8 @@ export const Container = styled.KeyboardAvoidingView.attrs({
     behavior: 'padding',
 })`
     flex: 1;
-    background-color: #ffffff;
-    margin-top: 50px
+    background-color: #000000;
+    margin-top: 50px;
 `;
 
 export const Form = styled.View`
@@ -22,5 +22,6 @@ export const TextoSobre = styled.Text`
     justify-content: center;
     align-items: center;
     font-size: 25px;
+    color: #fff;
     
 `;
