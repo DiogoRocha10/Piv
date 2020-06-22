@@ -18,13 +18,20 @@ export default function Explicacao(props) {
                 <Image style={styles.img} source={expo} />
             </Form>
             <TextoSobre>{`
-    Foi usado Expo no projeto, 
-primeiramente pela facilidade de configurar e instalar bibliotecas, segundo porque a ferramenta facilita a vida 
-de quem está iniciando com 
-react native, terceiro porque o 
-ambiente de testes e resolução 
-de erros no expo é muito prático 
-e de bom entendimento.
+    Foi usado Expo no projeto: 
+
+    1º: por ter facilidade de 
+    configurar e instalar 
+    bibliotecas. 
+
+    2º: porque a ferramenta 
+    facilita a vida de quem está 
+    iniciando com react native.
+    
+    3º: porque o ambiente de 
+    testes e resolução de erros 
+    no expo é muito prático e de 
+    bom entendimento.
                 `}
             </TextoSobre>
         </Container>

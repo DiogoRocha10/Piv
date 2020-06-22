@@ -7,7 +7,6 @@ import InfoArq from '../InfoArq/index'
 import Sobre from '../Sobre/index'
 import Explicacao from '../Explicacao/index'
 import FAQ from '../FAQ/index'
-import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
@@ -17,8 +16,12 @@ export default function App() {
   return (
     <Drawer.Navigator
       drawerStyle={{
-        backgroundColor: '#fff',
-        width: 240,
+        backgroundColor: 'black'
+      }}
+      drawerContentOptions={{
+        activeTintColor: 'red',
+        inactiveTintColor: '#fff'
+        
       }}
     >
       <Drawer.Screen 

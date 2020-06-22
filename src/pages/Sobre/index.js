@@ -3,7 +3,6 @@ import { StyleSheet, Linking, Image, TouchableOpacity, Alert, Button} from 'reac
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Perfil from '../../assets/perfil.jpg'
 
-
 import { DrawerActions } from '@react-navigation/native'
 import { Container, Form, TextoSobre} from './styles'
 
@@ -13,7 +12,6 @@ export default function Sobre(props) {
     const twitter = "https://twitter.com/Diogo99R"
     const instagram = "https://www.instagram.com/diogo_rochaaa/?hl=pt-br"
     const github = "https://github.com/DiogoRocha10"
-    
     
     const OpenURL = ({ url, children }) => {
         const handlePress = useCallback(async () => {

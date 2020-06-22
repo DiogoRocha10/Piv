@@ -1,7 +1,6 @@
 import { Platform } from 'react-native';
 import styled from 'styled-components/native';
 
-
 export const Container = styled.KeyboardAvoidingView.attrs({
     enabled: Platform.OS === 'ios',
     behavior: 'padding',
@@ -22,6 +21,5 @@ export const TextoSobre = styled.Text`
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    color: #fff;
-    
+    color: #fff;  
 `;

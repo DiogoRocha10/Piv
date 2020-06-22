@@ -1,8 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity} from 'react-native'
+import { TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { DrawerActions } from '@react-navigation/native'
-import { Container } from './styles'
+
 
 export default function Home(props) {
     const { navigation } = props
@@ -11,10 +11,8 @@ export default function Home(props) {
         <TouchableOpacity   
             style={{ alignItems: "flex-start", marginTop: 50 }}
             >
-                <Icon name="reorder" size={50} color="blue" onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />
+                <Icon name="reorder" size={50} color="black" onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />
         </TouchableOpacity>
             
     )
 }
-
-const styles = StyleSheet.create({})
