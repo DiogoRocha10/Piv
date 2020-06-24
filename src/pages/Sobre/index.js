@@ -1,13 +1,10 @@
 import React, {useCallback} from 'react'
-import { StyleSheet, Linking, Image, TouchableOpacity, Alert, Button} from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { StyleSheet, Linking, Image, Alert, Button} from 'react-native'
 import Perfil from '../../assets/perfil.jpg'
+import { Container, Form, TextoSobre, SubmitButton} from './styles'
 
-import { DrawerActions } from '@react-navigation/native'
-import { Container, Form, TextoSobre} from './styles'
-
-export default function Sobre(props) {
-    const { navigation } = props
+export default function Sobre() {
+    
     const facebook = "https://www.facebook.com/diogo.rocha.1042/"
     const twitter = "https://twitter.com/Diogo99R"
     const instagram = "https://www.instagram.com/diogo_rochaaa/?hl=pt-br"
@@ -27,22 +24,19 @@ export default function Sobre(props) {
 
     return (
         <Container>
-            <TouchableOpacity>
-                <Icon name="reorder" size={50} color="#fff" onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />
-            </TouchableOpacity>
             <Form>
                 <Image style={styles.img} source={Perfil} />
             </Form>
             <TextoSobre>{`
-                Diogo Rocha\n
-                19 anos\n
-                5º Semestre
-                Computação
-                IMED\n
-                Desenvolvedor
-                Front-End
-                Compasso Uol\n
-                `}
+    Diogo Rocha\n
+    19 anos\n
+    5º Semestre
+    Computação
+    IMED\n
+    Desenvolvedor
+    Front-End
+    Compasso Uol\n
+    `}
             </TextoSobre>
             <OpenURL url={facebook}>Facebook</OpenURL>
             <OpenURL url={twitter}>Twitter</OpenURL>
@@ -52,17 +46,12 @@ export default function Sobre(props) {
     )
 }
 
+
 const styles = StyleSheet.create({
     img: {
         height: 100,
         width: 100,
         borderRadius: 100
-    },
-    fundo: {
-        height: 500,
-        width: 500,
-        flex: 1,
-        resizeMode: "cover",
-        justifyContent: "center"
     }
-})
+});
+

@@ -1,29 +1,20 @@
 import React from 'react'
 
-import { StyleSheet, TouchableOpacity, Image} from 'react-native'
-import { DrawerActions } from '@react-navigation/native'
+import { StyleSheet, Image} from 'react-native'
 import { Container, Form, TextoSobre } from './styles'
 import expo from '../../assets/expo.png'
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
-export default function Explicacao(props) {
-    const { navigation } = props
-
+export default function Explicacao() {
     return (
         <Container>
-            <TouchableOpacity>
-                <Icon name="reorder" size={50} color="#fff" onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />
-            </TouchableOpacity>
             <Form>
                 <Image style={styles.img} source={expo} />
             </Form>
             <TextoSobre>{`
     Foi usado Expo no projeto: 
-
     1º: por ter facilidade de 
     configurar e instalar 
     bibliotecas. 
-
     2º: porque a ferramenta 
     facilita a vida de quem está 
     iniciando com react native.
@@ -44,3 +35,6 @@ const styles = StyleSheet.create({
         width: 200
     }
 })
+
+
+

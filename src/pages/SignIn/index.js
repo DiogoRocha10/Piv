@@ -41,7 +41,7 @@ export default function SignIn(props) {
 
             <Form>
                 <LinearGradient
-                    colors={['#fd883e', '#fd6b13', '#fd1145']}
+                    colors={['#a58fd2', '#f8c0ea', '#cca6dd']}
                     style={{
                         position: 'absolute',
                         left: 0,

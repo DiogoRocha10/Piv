@@ -1,13 +1,15 @@
 import { Platform } from 'react-native';
 import styled from 'styled-components/native';
+import Button from '../../components/Button';
 
 export const Container = styled.KeyboardAvoidingView.attrs({
     enabled: Platform.OS === 'ios',
     behavior: 'padding',
 })`
     flex: 1;
-    background-color: #000000;
-    margin-top: 50px;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const Form = styled.View`
@@ -22,4 +24,9 @@ export const TextoSobre = styled.Text`
     align-items: center;
     font-size: 25px;
     color: #fff; 
+`;
+
+export const SubmitButton = styled(Button)`
+    width: 50%;
+    background-color: #000000;
 `;

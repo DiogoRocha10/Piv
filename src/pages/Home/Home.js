@@ -1,18 +1,30 @@
-import React from 'react'
-import { TouchableOpacity } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import { DrawerActions } from '@react-navigation/native'
+import React, { useLayoutEffect} from 'react'
+import { Text } from 'react-native'
+import { Entypo } from '@expo/vector-icons';
 
+import { Container } from './styles'
 
-export default function Home(props) {
-    const { navigation } = props
+export default function Home({ navigation, route }) {
+    const superior = route.params.superior
+
+    useLayoutEffect(() => {
+        superior.setOptions({
+            title: 'PIV',
+            headerLeft: () => (
+                <Entypo
+                    name="menu"
+                    size={24}
+                    color="black"
+                    onPress={() => navigation.openDrawer()}
+                    style={{ marginLeft: 20 }}
+                />
+            ),
+        });
+    }, []);
 
     return (
-        <TouchableOpacity   
-            style={{ alignItems: "flex-start", marginTop: 50 }}
-            >
-                <Icon name="reorder" size={50} color="black" onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />
-        </TouchableOpacity>
-            
+        <Container>
+            <Text>Screen Home </Text>
+        </Container>
     )
 }
