@@ -10,7 +10,7 @@ import FAQ from '../FAQ/index'
 import InfoArq from '../InfoArq/index'
 import Explicacao from '../Explicacao/index'
 import Sobre from '../Sobre/index'
-import SignIn from '../SignIn/index';
+import diario from '../Diario/index'
 
 /* Wannings Ignorados */
 import { YellowBox } from 'react-native';
@@ -40,7 +40,7 @@ function MenuSide({ navigation }) {
       <Drawer.Screen name="Explicação" component={Explicacao} />
       <Drawer.Screen name="Arquitetura" component={InfoArq} />
       <Drawer.Screen name="Sobre" component={Sobre} />
-      {/* <Drawer.Screen name="Sair" component={SignIn} /> */}
+      <Drawer.Screen name="Diário" component={diario} />
     </Drawer.Navigator>
   )
 }
