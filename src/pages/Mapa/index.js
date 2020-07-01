@@ -1,11 +1,25 @@
-import React from 'react'
-import { Text } from 'react-native'
-import { Container } from './styles'
+import React from 'react';
+import MapView from 'react-native-maps';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+
 
 export default function Mapa() {
-    return (
-        <Container>
-            <Text>Mapa</Text>
-        </Container>
-    )
+  return (
+    <View style={styles.container}>
+      <MapView style={styles.mapStyle} />
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+container: {
+  flex: 1,
+  backgroundColor: '#fff',
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+mapStyle: {
+  width: Dimensions.get('window').width,
+  height: Dimensions.get('window').height,
+},
+});

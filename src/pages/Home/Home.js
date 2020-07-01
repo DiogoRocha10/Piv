@@ -1,12 +1,12 @@
 import React, { useLayoutEffect} from 'react'
 import { Text } from 'react-native'
 import { Entypo } from '@expo/vector-icons';
-
 import { Container } from './styles'
 
 export default function Home({ navigation, route }) {
     const superior = route.params.superior
 
+    //pegando header padrão       
     useLayoutEffect(() => {
         superior.setOptions({
             title: 'PIV',

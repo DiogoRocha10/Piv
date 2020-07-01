@@ -13,17 +13,17 @@ import Sobre from '../Sobre/index'
 import diario from '../Diario/index'
 
 /* Wannings Ignorados */
-import { YellowBox } from 'react-native';
-
-YellowBox.ignoreWarnings([
-  'Non-serializable values were found in the navigation state',
-]);
+console.disableYellowBox=true
 
 function MenuSide({ navigation }) {
   const superior = navigation
   const Drawer = createDrawerNavigator();
   return (
+
+    // criando menu lateral no home
     <Drawer.Navigator initialRouteName="Home"
+
+    //estilização do menu lateral
       hideStatusBar={false}
       drawerStyle={{
         backgroundColor: '#cca6dd',
@@ -34,17 +34,17 @@ function MenuSide({ navigation }) {
         inactiveTintColor: '#fff'   
       }}
     >
+      {/* Componentes do menu lateral */}
       <Drawer.Screen name="Home" component={Home} initialParams={{ superior }} />
       <Drawer.Screen name="Mapa" component={Mapa} />
+      <Drawer.Screen name="Diário" component={diario} />
       <Drawer.Screen name="FAQ" component={FAQ} />
       <Drawer.Screen name="Explicação" component={Explicacao} />
       <Drawer.Screen name="Arquitetura" component={InfoArq} />
       <Drawer.Screen name="Sobre" component={Sobre} />
-      <Drawer.Screen name="Diário" component={diario} />
     </Drawer.Navigator>
   )
 }
-
 
 export default function Menu() {
   const Stack = createStackNavigator();

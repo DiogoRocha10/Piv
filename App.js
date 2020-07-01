@@ -8,11 +8,22 @@ import Home from './src/pages/Home/index'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
+//Configurando Encondig ===============
+import { decode, encode } from 'base-64'
+if (!global.btoa) {
+  global.btoa = encode
+}
+if (!global.atob) {
+  global.atob = decode
+}
+//==================================
+
 
 export default function App() {
   const Stack = createStackNavigator();
 
   return (
+    //Container principal de login, criar conta e home
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home" >
         <Stack.Screen

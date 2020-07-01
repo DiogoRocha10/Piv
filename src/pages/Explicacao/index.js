@@ -7,14 +7,18 @@ import expo from '../../assets/expo.png'
 export default function Explicacao() {
     return (
         <Container>
+            {/* logo do expo png */}
             <Form>
                 <Image style={styles.img} source={expo} />
             </Form>
+
+            {/* texto explicativo */}
             <TextoSobre>{`
     Foi usado Expo no projeto: 
     1º: por ter facilidade de 
     configurar e instalar 
     bibliotecas. 
+    
     2º: porque a ferramenta 
     facilita a vida de quem está 
     iniciando com react native.

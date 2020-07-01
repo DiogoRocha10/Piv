@@ -23,17 +23,18 @@ export default function SignUp(props) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    //Função para cria o usuario
     const createUser = () => {
 
         authService.saveUser(email, password)
         .then(retorno => {
-            setMensagem("Usuário Cadastrado")
+            alert("Usuário Cadastrado")
             setEmail("")
             setName("")
             setPassword("")
         })
         .catch(erro => {
-            setMensagem(erro.message)
+            alert(erro.message)
         })
     }
 

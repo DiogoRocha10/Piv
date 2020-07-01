@@ -6,7 +6,7 @@ export const Container = styled.KeyboardAvoidingView.attrs({
     behavior: 'padding',
 })`
     flex: 1;
-    background-color: #fff;
+    background-color: #cca6dd;
     align-items: center;
     justify-content: center;
 `;
@@ -22,5 +22,5 @@ export const TextoSobre = styled.Text`
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    color: black;  
+    color: #fff;  
 `;

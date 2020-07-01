@@ -1,50 +1,37 @@
+import { Platform } from 'react-native';
 import styled from 'styled-components/native';
-import { RectButton } from 'react-native-gesture-handler'
 
-export const Container = styled.View`
-  flex: 1;
-  padding: 30px;
-  background-color: #fff;
-  align-items: center;
-  justify-content: center;
+import Input from '../../components/Input';
+import Button from '../../components/Button';
+
+export const Container = styled.KeyboardAvoidingView.attrs({
+    enabled: Platform.OS === 'ios',
+    behavior: 'padding',
+})`
+    flex: 1;
+    padding: 0 30px;
+    background-color: #cca6dd;
 `;
 
 export const Form = styled.View`
-  flex-direction: row;
-  padding-bottom: 10px;
-  border-bottom-width: 1px;
-  border-color: #eee;
+    align-self: stretch;
+    margin-top: 35px;
 `;
 
-
-export const Erro = styled.Text`
-  color: red;
-  margin-left: 20px;
+export const FormInput = styled(Input)`
+    margin-bottom: 0px;
 `;
 
-export const TextStyle = styled.Text`
-  font-size: 18px;
-  margin: 20px;
+export const SubmitButton = styled(Button)`
+    margin: 10px;
 `;
 
-export const Input = styled.TextInput.attrs({
-  placeholderTextColor: '#999',
-})`
-  flex: 1;
-  height: 40px;
-  background: #eee;
-  border-radius: 4px;
-  padding: 0 15px;
-  border: 1px solid #7159c1;
+export const SignLink = styled.TouchableOpacity`
+    margin-top: 20px;
 `;
 
-export const SubmitButton = styled(RectButton)`
-  justify-content: center;
-  align-items: center;
-  background: #7159c1;
-  border-radius: 4px;
-  margin-left: 10px;
-  padding: 0px;
-  height: 50px;
-  width: 30%;
+export const SignLinkText = styled.Text`
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
 `;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, Text } from 'react-native';
+import { Image } from 'react-native';
 
 import logo from '../../assets/logo.png';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -18,11 +18,10 @@ import {
 export default function SignIn(props) {
     const { navigation } = props
     
-    const [mensagem, setMensagem] = useState("")
     const [email, setEmail] = useState("diogo@gmail.com")
     const [password, setPassword] = useState("123456")
 
-
+    //Função para validar o login pegando o serviço do back
     const validarLogin = () => {
 
         authService.login(email, password)
@@ -30,14 +29,13 @@ export default function SignIn(props) {
             navigation.replace('Home')
         })
         .catch(erro => {
-            setMensagem(erro.message)
+            alert(erro.message)
         })
     }
 
     return (
         <Container>
             <Image source={logo} />
-            <Text>{mensagem}</Text>
 
             <Form>
                 <LinearGradient
