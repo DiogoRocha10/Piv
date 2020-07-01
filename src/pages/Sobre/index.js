@@ -1,7 +1,8 @@
 import React, {useCallback} from 'react'
 import { StyleSheet, Linking, Image, Alert, Button} from 'react-native'
 import Perfil from '../../assets/perfil.jpg'
-import { Container, Form, TextoSobre} from './styles'
+import { Container, Content, Accordion} from "native-base";
+import { Form} from './styles'
 
 export default function Sobre() {
     //Variaveis com os links
@@ -9,6 +10,14 @@ export default function Sobre() {
     const twitter = "https://twitter.com/Diogo99R"
     const instagram = "https://www.instagram.com/diogo_rochaaa/?hl=pt-br"
     const github = "https://github.com/DiogoRocha10"
+
+    const dataArray = [
+    { title: "Nome", content: "Diogo Francisco da Rocha" },
+    { title: "Idade", content: "19 anos" },
+    { title: "Profissão", content: "Desenvolvedor Front-End" },
+    { title: "Empresa", content: "Compasso Uol" },
+    { title: "Escolaridade", content: "5º Semestre CC-IMED" }
+    ];
 
     //Função que pega a url cria um link e retorna no botão
     const OpenURL = ({ url, children }) => {
@@ -20,28 +29,17 @@ export default function Sobre() {
                 Alert.alert(`Impossivel abrir URL : ${url}`)
             }
         }, [url]);
-        return <Button color="black" title={children} onPress={handlePress} />
+        return <Button color="#cca6dd" title={children} onPress={handlePress} />
     }
 
     return (
         <Container>
-            {/* Imagem com a foto de perfil */}
             <Form>
                 <Image style={styles.img} source={Perfil} />
             </Form>
-
-            {/* Texto fixado sobre o desenvolvedor */}
-            <TextoSobre>{`
-    Diogo Rocha\n
-    19 anos\n
-    5º Semestre
-    Computação
-    IMED\n
-    Desenvolvedor
-    Front-End
-    Compasso Uol\n
-    `}
-            </TextoSobre>
+            <Content padder>
+                <Accordion dataArray={dataArray} icon="add" expandedIcon="remove" />
+            </Content>
 
             {/* Botões com os links */}
             <OpenURL url={facebook}>Facebook</OpenURL>

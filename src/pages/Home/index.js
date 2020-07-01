@@ -11,6 +11,8 @@ import InfoArq from '../InfoArq/index'
 import Explicacao from '../Explicacao/index'
 import Sobre from '../Sobre/index'
 import diario from '../Diario/index'
+import Chat from '../ChatBot/index'
+import Meditacao from '../Meditacao';
 
 /* Wannings Ignorados */
 console.disableYellowBox=true
@@ -38,6 +40,8 @@ function MenuSide({ navigation }) {
       <Drawer.Screen name="Home" component={Home} initialParams={{ superior }} />
       <Drawer.Screen name="Mapa" component={Mapa} />
       <Drawer.Screen name="Diário" component={diario} />
+      <Drawer.Screen name="Meditação" component={Meditacao} />
+      <Drawer.Screen name="Chat" component={Chat} />
       <Drawer.Screen name="FAQ" component={FAQ} />
       <Drawer.Screen name="Explicação" component={Explicacao} />
       <Drawer.Screen name="Arquitetura" component={InfoArq} />
