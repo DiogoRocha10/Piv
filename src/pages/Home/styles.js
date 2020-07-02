@@ -8,16 +8,7 @@ export const Container = styled.KeyboardAvoidingView.attrs({
     behavior: 'padding',
 })`
     flex: 1;
-    background-color: #fff;
+    background-color: #cca6dd;
     align-items: center;
     justify-content: center;
-`;
-
-export const Form = styled.View`
-    align-self: stretch;
-    margin-top: 50px;
-`;
-
-export const SubmitButton = styled(Button)`
-    margin-top: 5px;
 `;

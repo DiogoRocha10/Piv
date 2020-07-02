@@ -12,6 +12,8 @@ export default function Arquitetura() {
   return (
     <Provider>
       <Portal>
+        
+        {/* MODAL DE INFORMAÇÕES */}
         <Modal visible={visible} onDismiss={hideModal}>
         <TextoSobre>{`
     A arquitetura do projeto 

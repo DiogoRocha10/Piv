@@ -10,7 +10,8 @@ export default function Sobre() {
     const twitter = "https://twitter.com/Diogo99R"
     const instagram = "https://www.instagram.com/diogo_rochaaa/?hl=pt-br"
     const github = "https://github.com/DiogoRocha10"
-
+    
+    // Array com as informações
     const dataArray = [
     { title: "Nome", content: "Diogo Francisco da Rocha" },
     { title: "Idade", content: "19 anos" },
@@ -37,6 +38,8 @@ export default function Sobre() {
             <Form>
                 <Image style={styles.img} source={Perfil} />
             </Form>
+
+            {/* Botoes com efeito de esconder */}
             <Content padder>
                 <Accordion dataArray={dataArray} icon="add" expandedIcon="remove" />
             </Content>
