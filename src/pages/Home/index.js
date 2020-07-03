@@ -13,6 +13,8 @@ import Sobre from '../Sobre/index'
 import diario from '../Diario/index'
 import Chat from '../ChatBot/index'
 import Meditacao from '../Meditacao';
+import Sair from '../Logout/index';
+
 
 /* Wannings Ignorados */
 console.disableYellowBox=true
@@ -46,6 +48,7 @@ function MenuSide({ navigation }) {
       <Drawer.Screen name="Explicação" component={Explicacao} />
       <Drawer.Screen name="Arquitetura" component={InfoArq} />
       <Drawer.Screen name="Sobre" component={Sobre} />
+      <Drawer.Screen name="Sair" component={Sair} />
     </Drawer.Navigator>
   )
 }
