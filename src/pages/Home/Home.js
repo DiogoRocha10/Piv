@@ -1,9 +1,8 @@
 import React, { useLayoutEffect} from 'react'
-import { StyleSheet, Image } from 'react-native'
+import { Image } from 'react-native'
 import { Entypo } from '@expo/vector-icons';
 import { Container } from './styles'
-import * as Animatable from 'react-native-animatable';
-import logo from '../../assets/logo.png';
+import piv from '../../assets/Piv.png';
 
 export default function Home({ navigation, route }) {
     const superior = route.params.superior
@@ -27,21 +26,7 @@ export default function Home({ navigation, route }) {
 
     return (
         <Container>
-            <Animatable.Text
-            style={styles.texto} 
-            animation="slideInUp" 
-            terationCount={10} 
-            duration={5000}
-            direction="alternate">Seja Bem vindo ao</Animatable.Text>
-            <Image source={logo} />
+            <Image source={piv} />
         </Container>
         )
 }
-
-const styles = StyleSheet.create({
-    texto: {
-        fontSize: 30,
-        color: '#fff'
-    }
-});
-
