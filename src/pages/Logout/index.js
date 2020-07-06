@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Image, AsyncStorage, Text, StyleSheet, Alert} from 'react-native';
+import React, { useState} from 'react';
+import { Image, StyleSheet, Alert, Keyboard} from 'react-native';
 import Textarea from 'react-native-textarea'
+import {firebase} from '../../backend/firebase'
 
 import logo from '../../assets/logo.png';
 
@@ -17,7 +18,7 @@ import {
 export default function SignIn(props) {
     const { navigation } = props
     
-    const [registro, setRegistro] = useState("")
+    const [novoRegistro, setNovoRegistro] = useState("")
 
     //Função para sair do app
     const Logout = () => {
@@ -31,39 +32,33 @@ export default function SignIn(props) {
         })
     }
 
-    const saveRegister= () => {
-        let registrados = {
-            registro: registro
+    //salvar os registros no banco
+    async function saveRegister(){
+        if(novoRegistro !== ''){
+  
+          let feedback = await firebase.database().ref('feedback')
+          let chave = feedback.push().key
+  
+          feedback.child(chave).set({
+            feedback: novoRegistro
+          })
+  
+          Keyboard.dismiss();
+          setNovoRegistro('')
+          Alert.alert("Seu feedback foi salvo, obrigado!")
         }
-        AsyncStorage.setItem("registrados", JSON.stringify(registrados))
-        setRegistro("")
-        Alert.alert("Seu feedback foi salvo, muito obrigado!")
-    }
-
-    useEffect(() => {
-
-        const inicializaDados = async () => {
-          let registrados = JSON.parse(await AsyncStorage.getItem("registrados"))
-          if (registrados) {
-            setRegistro(registrados.registro)
-            
-          }
-        }
-        inicializaDados()
-
-    }, [])
+      }
 
 
     return (
         <Container>
             <Image source={logo} />
-            <Text>Deixe um Feedback!</Text>
             <Form>
                 <Textarea
                     containerStyle={styles.textareaContainer}
                     style={styles.textarea}
-                    onChangeText={text => setRegistro(text)}
-                    value={registro}
+                    onChangeText={text => setNovoRegistro(text)}
+                    value={novoRegistro}
                     maxLength={120}
                     placeholder={'Deixe um feedback!'}
                     placeholderTextColor={'#c7c7c7'}
@@ -85,12 +80,6 @@ export default function SignIn(props) {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      padding: 30,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
     textareaContainer: {
       height: 180,
       padding: 5,
