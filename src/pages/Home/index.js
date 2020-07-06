@@ -5,10 +5,10 @@ import { createDrawerNavigator} from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from '../Home/Home'
-import Mapa from '../Mapa/index'
 import FAQ from '../FAQ/index'
 import InfoArq from '../InfoArq/index'
 import Explicacao from '../Explicacao/index'
+import Mapa from '../Mapa/index'
 import Sobre from '../Sobre/index'
 import diario from '../Diario/index'
 import Chat from '../ChatBot/index'
@@ -40,10 +40,10 @@ function MenuSide({ navigation }) {
     >
       {/* Componentes do menu lateral */}
       <Drawer.Screen name="Home" component={Home} initialParams={{ superior }} />
-      <Drawer.Screen name="Mapa" component={Mapa} />
       <Drawer.Screen name="Diário" component={diario} />
       <Drawer.Screen name="Meditação" component={Meditacao} />
       <Drawer.Screen name="Chat" component={Chat} />
+      <Drawer.Screen name="Mapa de ajuda" component={Mapa} />
       <Drawer.Screen name="FAQ" component={FAQ} />
       <Drawer.Screen name="Explicação" component={Explicacao} />
       <Drawer.Screen name="Arquitetura" component={InfoArq} />
