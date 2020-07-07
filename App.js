@@ -25,7 +25,7 @@ export default function App() {
   return (
     //Container principal de login, criar conta e home
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home" >
+      <Stack.Navigator initialRouteName="SignIn" >
         <Stack.Screen
           name="SignUp"
           component={SignUp}
